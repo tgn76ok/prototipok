@@ -1,0 +1,2 @@
+O front fazer uma requisição da tabela bethouse, para acessar o link ao clicar na aposta
+adicionalmente fazer um post para o back aonda id_behouse = id na tabela bethouse 
