@@ -1,5 +1,5 @@
 'use strict';
-const { Model, DataTypes } = require('sequelize');
+const {DataTypes, Model } = require('sequelize');
 const sequelize = require('./connection');
 
 class Grant extends Model { }
@@ -17,7 +17,8 @@ Grant.init({
     route:          { type: DataTypes.STRING, allowNull: false }
 }, {
 
-  sequelize, modelName: 'grants',
+  sequelize, 
+  modelName: 'grants',
   tableName: 'grants',
   underscored: true
 });

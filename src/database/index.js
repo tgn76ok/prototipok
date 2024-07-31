@@ -1,7 +1,7 @@
 const sequelize = require("../models/connection");
 const Sequelize = require("sequelize");
-const User = require("../models/User");
 const Grant = require("../models/grant");
+const User = require("../models/User");
 const Profile = require("../models/profile");
 const ProfileGrant = require("../models/profileGrant");
 

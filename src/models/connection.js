@@ -1,6 +1,6 @@
 import databaseConfig from '../config/database';
-const WebSocket = require('ws');
-const wss = new WebSocket.Server({ port: 8080 });
+// const WebSocket = require('ws');
+// const wss = new WebSocket.Server({ port: 8080 });
 
 const Sequelize = require("sequelize");
 
@@ -9,6 +9,8 @@ Sequelize.postgres.DECIMAL.parse = function (value) { return parseFloat(value, 1
 
 const connection = new Sequelize(databaseConfig);
 connection.authenticate()
+  .then(() => console.log('Database connected'))
+  .catch(err => console.error('Unable to connect to the database:', err));
   // .then(() => {
   //   console.log('Escutando webhook_channel')
 
@@ -54,4 +56,4 @@ async function broadcastMessage(message) {
 // });
 
 
-// module.exports = connection;
+module.exports = connection;
