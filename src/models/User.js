@@ -33,7 +33,7 @@ User.init(
         },
       },
     },
-    profile_id: {
+    profiles_id: {
       type: DataTypes.UUID,
       references: { model: "profiles", key: "id" },
     },

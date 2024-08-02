@@ -10,7 +10,6 @@ const router = new Router();
 router.use(validateResponserMiddleware);
 
 
-// router.get('/useresNotTreino/',AuthMiddleware, userController.indexAll); // Lista usuários
 router.get('/AllUSers',AuthMiddleware, userController.indexAll); // Lista usuários
 
 router.get('/',AuthMiddleware, userController.show); // Lista usuário

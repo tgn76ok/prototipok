@@ -14,9 +14,11 @@ import validateResponse from "./middlewares/validateResponse";
 
 import userRoutes from "./routes/userRoutes";
 import tokenRoutes from "./routes/tokenRoutes";
+import eventosRoutes from "./routes/eventosRoutes";
+import ingressosRoutes from "./routes/ingressosRoutes";
 
 
-// import profileRoutes from "./routes/profileRoutes";
+import profileRoutes from "./routes/profileRoutes";
 // import grandsRoutes from "./routes/GrandsRoutes";
 const whiteList = ["http://localhost:3000"];
 
@@ -51,9 +53,12 @@ class App {
     this.app.use("/users", userRoutes);
     this.app.use("/tokens", tokenRoutes);
    
+    this.app.use("/eventos", eventosRoutes);
+    this.app.use("/ingressos", ingressosRoutes);
+    
 
     // //end points dev
-    // this.app.use("/profile", profileRoutes);
+    this.app.use("/profile", profileRoutes);
     // this.app.use("/grands", grandsRoutes);
 
   }

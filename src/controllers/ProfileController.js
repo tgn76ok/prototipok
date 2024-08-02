@@ -18,17 +18,9 @@ class profileController {
       })
 
       const routes = await Grands.bulkCreate([
-        { grant: 'post', route: '/users/cheking', note: 'User comun fazer o cheking' },
         { grant: 'get,update,delete', route: '/users', note: 'acesso as infos do proprio user' },
-        { grant: 'get', route: '/users/plano', note: 'pegar o plano do user' },
         { grant: 'get', route: '/users/MudarSenha', note: 'pegar o plano do user' },
-        { grant: 'get', route: '/users/treino/:id', note: 'pegar o treino' },
 
-        { grant: 'get', route: '/treino/categoria/:categoria', note: 'pegar todos os treinos por cateoria' },
-        { grant: 'update,post,get', route: '/users/Professores', note: 'pegar todos os treinos por cateoria' },
-        { grant: 'get,post',      route: '/MensagemAluno',     note: 'Criar os planos,ver todos os plano criados pelo proprio treinador' },
-      { grant: 'get,post',      route: '/MensagemAluno/:id',     note: 'Criar os planos,ver todos os plano criados pelo proprio treinador' },
-      { grant: 'get,post',      route: '/MensagemAluno/MeusAvisos',     note: 'Criar os planos,ver todos os plano criados pelo proprio treinador' }
       ]);
       
 

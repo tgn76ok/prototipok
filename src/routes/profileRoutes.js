@@ -14,7 +14,7 @@ router.get('/:id', profileController.show); // Lista usuário
 
 router.post('/',profileController.store);
 router.post('/professor',profileController.storeProfessor);
-router.post('/admin',profileController.storeProfessor);
+router.post('/admin',profileController.storeAdmin);
 
 
 router.put('/', profileController.update);

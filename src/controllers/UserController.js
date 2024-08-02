@@ -24,8 +24,11 @@ class UserController {
       if ( !email) {
         mess.push('coloque um email')
       }
-      if ( !last_name) {
-        mess.push('coloque um sobrenome')
+      if ( !name) {
+        mess.push('coloque um nome')
+      }
+      if ( !password) {
+        mess.push('coloque uma senha')
       }
       
       const is_validocpf =  new ValidaCPF(cpf).valida()
@@ -81,11 +84,14 @@ class UserController {
           isAdmin: false
         }
       })
+      console.log(profile)
+      console.log('=-=-=-=-=-=-=-=')
+      console.log(profile.id)
 
       try {
  
       const novoUser = await User.create({
-          profile_id: profile.id,
+          profiles_id: profile.id,
           password:password ,
           cpf:cpf,
           last_name:last_name, 
@@ -104,7 +110,7 @@ class UserController {
         const idUser = await novoUser.id
       
       
-        return res.status(201).json({ name, email, message: 'Sucesso' } );
+        return res.status(201).json({ name:novoUser.name, email:novoUser.email,id:novoUser.profiles_id, message: 'Sucesso' } );
 
 
       } catch (err) {
